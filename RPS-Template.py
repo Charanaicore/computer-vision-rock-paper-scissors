@@ -1,3 +1,4 @@
+
 import cv2
 from keras.models import load_model
 import numpy as np
@@ -14,11 +15,11 @@ while True:
     prediction = model.predict(data)
     cv2.imshow('frame', frame)
     # Press q to close the window
-    print(np.argmax(prediction))
+    print(prediction)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
             
 # After the loop release the cap object
 cap.release()
 # Destroy all the windows
-cv2.destroyAllWindows()    
+cv2.destroyAllWindows()
