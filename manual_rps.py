@@ -1,50 +1,25 @@
-import random
+def get_computer_choice():
+    import random as rd
+    computer_choice = rd.choice(["Rock" , "Paper", "Scissors"])
+    return computer_choice
 
-rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-'''
+def get_user_choice():
+    user_choice = input("Choose Paper, Scissors or Rock:")
+    return user_choice
 
-paper = '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-'''
+def get_winner(computer_choice , user_choice):
+    if computer_choice == user_choice:
+        return print("It is a tie!")
+    elif computer_choice == "Rock" and user_choice == "Scissors":
+        return print("You lost")
+    elif computer_choice == "Paper" and user_choice == "Rock":
+        return print("You lost")    
+    elif computer_choice == "Scissors" and user_choice == "Paper":
+        return print("You lost")  
+    else: 
+        return print("You won!")
 
-scissors = '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-'''
+def play():
+    get_winner(get_computer_choice(),get_user_choice())
 
-game_images = [rock, paper, scissors]
-
-user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
-print(game_images[user_choice])
-
-computer_choice = random.randint(0, 2)
-print("Computer chose:")
-print(game_images[computer_choice])
-
-if user_choice >= 3 or user_choice < 0: 
-  print("You typed an invalid number, you lose!") 
-elif user_choice == 0 and computer_choice == 2:
-  print("You win!")
-elif computer_choice == 0 and user_choice == 2:
-  print("You lose")
-elif computer_choice > user_choice:
-  print("You lose")
-elif user_choice > computer_choice:
-  print("You win!")
-elif computer_choice == user_choice:
-  print("It's a draw")
+play()
