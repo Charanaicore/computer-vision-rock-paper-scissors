@@ -14,11 +14,11 @@ while True:
     prediction = model.predict(data)
     cv2.imshow('frame', frame)
     # Press q to close the window
-    print(prediction)
+    print(np.argmax(prediction))
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
             
 # After the loop release the cap object
 cap.release()
 # Destroy all the windows
-cv2.destroyAllWindows()
+cv2.destroyAllWindows()    
