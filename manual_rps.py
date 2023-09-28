@@ -12,7 +12,7 @@ def get_user_choice():
     Takes user input and checks that it is valid. Will repeatedly ask for input if user does not input 'rock', 'paper' or 'scissors'.
     Converts user input to lowercase, so capitalization is fine.
     '''
-    # ask user to input their choice and convert to lowercase
+    # ask user to input their choice and convert to lowercase#
     user_choice = input("Please enter your choice of rock, paper or scissors: ").lower()
     # start loop
     while True:
